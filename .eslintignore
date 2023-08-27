@@ -1,4 +1,5 @@
+eslintrc.cjs
 node_modules
 test-reports
 test-results
-state/storageState.json
+state
