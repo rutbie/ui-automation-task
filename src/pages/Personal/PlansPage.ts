@@ -37,10 +37,9 @@ export default class PlansPage {
 	}
     
 	clickGetPaidPlanBtn = async (planName: string, context: BrowserContext) => {
-		const [newPage] = await Promise.all([
-			context.waitForEvent('page'),
-			await this.getPaidPlanBtn(planName).click()
-		]);
+		const pagePromise = context.waitForEvent('page');
+		await this.getPaidPlanBtn(planName).click();
+		const newPage = await pagePromise;
 		return newPage;
 	}
 
