@@ -16,7 +16,7 @@ export default class DownloadingPage {
 	}
 
 	assertDownloadFile = async () => {
-		this.page.on('download', download => { expect(download.path()).toBeTruthy(); console.log('smth'); });
+		this.page.on('download', download => { expect(download.path()).toBeTruthy(); });
 	}
 
 	assertPageOpened = async () => {
